@@ -1,0 +1,16 @@
+###############################################################
+Copyright 2002-2012 Gazunga International
+
+Released under a Opensoure lincense.
+
+DO NOT COPY OR REMAKE THE CMS SYSTEM WITHOUT PERMISSON.
+
+###############################################################
+//sTART OF CMS KEY
+key_number
+gazun-11045-sd64g5-sd5tg-654tf-rdf5h
+//CMS SYSTEM LAUG
+laug="da"
+//Gauzunga support number
+ga_su
+gazun-11045-sd64g5-sd5tg-654tf-rdf5h
