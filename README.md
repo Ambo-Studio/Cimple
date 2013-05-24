@@ -30,3 +30,17 @@ Support
 Find the support site here - http://gazunga.net
 
 The system is developed by Frederick Eggertsen, AspIT Midtjylland.
+
+COPYRIGHT AND LICENSE
+==
+Copyright Gazunga and Frederick Eggertsen 2002-2013.
+
+All rights reserved
+
+LICENSE For Educational Community
+==
+If you want to use it in a class, theres a License for that :)
+
+Educational Community License, Version 2.0 (ECL-2.0)
+
+http://opensource.org/licenses/ECL-2.0
