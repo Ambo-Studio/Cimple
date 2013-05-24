@@ -25,4 +25,5 @@ This CMS system can only be installed on a server with:
 
 Support
 ==
-The system is developed by Frederick Eggertsen
+Find the support site here - http://gazunga.net
+The system is developed by Frederick Eggertsen, AspIT Midtjylland.
