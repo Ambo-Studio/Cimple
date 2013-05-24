@@ -20,7 +20,9 @@ Requirements
 This CMS system can only be installed on a server with:
 
 *PHP 5.0.1
+
 *MYSQL 4.2.0
+
 *HTML5 Support
 
 Support
