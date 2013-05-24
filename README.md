@@ -3,18 +3,16 @@ Cimple
 ======
 Cimple is a Content Management System, designed to power only a single small company
 
--
 
-Cimple er et Content Management System, desginet til at kunne køre små virksomhedder.
-
-Installtion
+Installation
 ===
 
-
-1. Be sure to rewhrite the Connections --> CMS.php With your database login and more information.
+1.Upload the "websted" folder to your "root" of your host.
+2. Be sure to rewhrite the Connections --> CMS.php With your database login and more information.
 The file will be damaged if you change on anything.
-2.Import the "mysql-import.sql" into your database, before moving on.
-3. NBow your ready to go!
+3.Import the "mysql-import.sql" into your database, before moving on.
+4. Now your ready to go!
+
 Login: admin password: admin
 
 Requirements
