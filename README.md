@@ -8,12 +8,9 @@ Installation
 ===
 
 1.Upload the "websted" folder to your "root" of your host.
-
 2. Be sure to rewhrite the Connections --> CMS.php With your database login and more information.
 The file will be damaged if you change on anything.
-
 3.Import the "mysql-import.sql" into your database, before moving on.
-
 4. Now your ready to go!
 
 Login: admin password: admin
