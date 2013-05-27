@@ -8,9 +8,11 @@ DO NOT COPY OR REMAKE THE CMS SYSTEM WITHOUT PERMISSON.
 ###############################################################
 //sTART OF CMS KEY
 key_number
-gazun-11045-sd64g5-sd5tg-654tf-rdf5h
+gazun-11045-sd64g5-sd5tg-654tf-rdf5
+xO9|U43XBc#S0l3Suw21!NXV+<32u8yF7j{T9B7;u9fgq~4Hi9!7,76SX5o2qul
 //CMS SYSTEM LAUG
 laug="da"
 //Gauzunga support number
 ga_su
 gazun-11045-sd64g5-sd5tg-654tf-rdf5h
+xO9|U43XBc#S0l3Suw21!NXV+<32u8yF7j{T9B7;u9fgq~4Hi9!7,76SX5o2qul
