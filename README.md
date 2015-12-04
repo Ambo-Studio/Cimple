@@ -28,13 +28,12 @@ This CMS system can only be installed on a server with:
 
 Support
 ==
-Find the support site here - http://gazunga.net
 
 The system is developed by Frederick Eggertsen, AspIT Midtjylland.
 
 COPYRIGHT AND LICENSE
 ==
-Copyright Gazunga and Frederick Eggertsen 2002-2013.
+Copyright Frederick Eggertsen 2002-2015.
 
 All rights reserved
 
