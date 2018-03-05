@@ -33,7 +33,7 @@ The system is developed by Frederick Eggertsen, AspIT Midtjylland.
 
 COPYRIGHT AND LICENSE
 ==
-Copyright Frederick Eggertsen 2002-2015.
+Copyright Frederick Eggertsen 2002-2018.
 
 All rights reserved
 
