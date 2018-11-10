@@ -1,13 +1,12 @@
 <img src="http://gazunga.net/in/thumbs/cimplelogo.png" border="0">
 <a href="https://codeclimate.com/github/Gazunga/Cimple"><img src="https://codeclimate.com/github/Gazunga/Cimple.png" /></a>
 
-Cimple
-==
+!Cimple
 Cimple is a Content Management System, designed to power only a single small company
 
 
 Installation & Login
-==
+=
 Please go to the wiki for the setup guide -
 https://github.com/tacaly/Cimple/wiki
 
@@ -16,7 +15,7 @@ Login: admin
 Password: admin
 
 Requirements
-==
+=
 This CMS system can only be installed on a server with:
 
 *PHP 5.0.1 - Or up -
