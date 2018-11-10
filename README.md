@@ -14,7 +14,9 @@ The file will be damaged if you change on anything.
 3.Import the "mysql-import.sql" into your database, before moving on.
 4. Now your ready to go!
 
-Login: admin password: admin
+Login: admin 
+
+password: admin
 
 Requirements
 ===
