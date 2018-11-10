@@ -9,6 +9,7 @@ Installation & Login
 Please go to the wiki for the setup guide -
 https://github.com/tacaly/Cimple/wiki
 
+-----------
 Login: admin 
 
 Password: admin
@@ -23,10 +24,10 @@ https://museum.php.net/php5/
 *MYSQL 4.2.0 - Or up -
 http://mysql.localhost.net.ar/downloads/mysql/4.1.html
 
-Support
+Support & Forum
 =
 
-You can get support at frederick@tacaly.com
+You can get support at Tacaly.com
 
 COPYRIGHT AND LICENSE
 =
