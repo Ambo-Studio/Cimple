@@ -1,4 +1,4 @@
-﻿<a href="http://gazunga.net/in/?v=cimplelogo.png"><img src="http://gazunga.net/in/thumbs/cimplelogo.png" border="0"></a>
+<img src="http://gazunga.net/in/thumbs/cimplelogo.png" border="0">
 <a href="https://codeclimate.com/github/Gazunga/Cimple"><img src="https://codeclimate.com/github/Gazunga/Cimple.png" /></a>
 Cimple
 ======
@@ -24,12 +24,11 @@ This CMS system can only be installed on a server with:
 
 *MYSQL 4.2.0
 
-*HTML5 Support
 
 Support
 ==
 
-The system is developed by Frederick Eggertsen, AspIT Midtjylland.
+The system is developed by Frederick Ambo
 
 COPYRIGHT AND LICENSE
 ==
@@ -39,7 +38,6 @@ All rights reserved
 
 LICENSE For Educational Community
 ==
-If you want to use it in a class, theres a License for that :)
 
 Educational Community License, Version 2.0 (ECL-2.0)
 
