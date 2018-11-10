@@ -31,7 +31,7 @@ The system is developed by Frederick Ambo
 
 COPYRIGHT AND LICENSE
 ==
-Copyright Frederick Eggertsen 2002-2018.
+Copyright Frederick Ambo 2002-2018.
 
 All rights reserved
 
