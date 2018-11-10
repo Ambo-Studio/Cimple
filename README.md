@@ -34,8 +34,9 @@ Copyright Frederick Ambo 2002-2018.
 
 All rights reserved
 
+-----------
+
 LICENSE For Educational Community
-=
 
 Educational Community License, Version 2.0 (ECL-2.0)
 
