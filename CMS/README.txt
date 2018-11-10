@@ -1,7 +1,7 @@
-#Gazunga Support
+#Tacaly
 
 Fist off the system is like a child and can not be hold on a cd or usb.
-all the files can be damged just by moving it.
+all the files can be damged just by moving them.
 
 
 TAG service is not inc. in this pack.
@@ -14,7 +14,6 @@ This CMS system can only be installed on a server with:
 
 *PHP 5.0.1
 *MYSQL 4.2.0
-*HTML5 Support
 
 
 The CMS system can!:
@@ -25,13 +24,4 @@ The CMS system can!:
 *give a better look on the way we produse and create things.
 
 
-YOU MAY NOT!
-
-*TAKE THE COPYRIGHT
-*TAKE THE CMS TO OWN MONEYMAKEING COMPANY NOT WITHOUT PERMISSON.
-*REMAKE THE SOFTWARE TO A BETTER SYSTEM WITHOUT ANY PERMISSON.
-*MAKE THE SYSTEM TO A SINGLE LICENSE.
-*TAKE THE CMS SYSTEM TO ANOTHER CONTRY OR CITY ON A CD OR USB.
-*REWHRITE THE (README OR LINCESE) DOKUMENTES.
-*CHANGE THE CMS NAME.
-*CREATE VIDEOS ON THE CMS SYSTEM WITHOUT A PERMISSON.
+All rights reserved 2018
