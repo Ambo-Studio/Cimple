@@ -1,8 +1,6 @@
 <img src="http://gazunga.net/in/thumbs/cimplelogo.png" border="0">
 <a href="https://codeclimate.com/github/Gazunga/Cimple"><img src="https://codeclimate.com/github/Gazunga/Cimple.png" /></a>
 
-!Cimple
-
 Cimple is a Content Management System, designed to power only a single small company
 
 
