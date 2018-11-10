@@ -27,7 +27,7 @@ This CMS system can only be installed on a server with:
 Support
 ==
 
-The system is developed by Frederick Ambo
+You can get support at frederick@tacaly.com
 
 COPYRIGHT AND LICENSE
 ==
