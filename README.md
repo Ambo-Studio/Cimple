@@ -4,16 +4,10 @@
 Cimple is a Content Management System, designed to power only a single small company
 
 
-Installation
+Installation & Login
 ===
+Please go to the wiki for the setup guide -
 https://github.com/tacaly/Cimple/wiki
-
-1.Upload the "websted" folder to your "root" of your host.
-1.1 Be sure to rewhrite the Connections --> CMS.php With your database login and more information. 
-The file will be damaged if you change on anything.
-
-2.Import the "mysql-import.sql" into your database, before moving on.
-2.1 Now you're ready to go!
 
 Login: admin 
 
