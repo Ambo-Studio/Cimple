@@ -18,8 +18,8 @@ SET SQL_MODE="NO_AUTO_VALUE_ON_ZERO";
 --
 -- Database: `cms`
 --
-CREATE DATABASE `cms` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
-USE `cms`;
+-- CREATE DATABASE `cms` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+-- USE `cms`;
 
 -- --------------------------------------------------------
 
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS `brugere` (
 --
 
 INSERT INTO `brugere` (`id`, `brugernavn`, `adgangskode`) VALUES
-(1, 'Cimple', 'pass');
+(1, 'admin', 'admin');
 
 -- --------------------------------------------------------
 
