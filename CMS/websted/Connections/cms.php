@@ -2,7 +2,7 @@
 # FileName="Connection_php_mysql.htm"
 # Type="MYSQL"
 # HTTP="true"
-# http://www.php.net/manual/en/function.mysql-pconnect.php
+# http://www.php.net/manual/en/function.mysql-pconnect.php 
 $hostname_cms = "localhost";
 $database_cms = "cms";
 $username_cms = "root";
