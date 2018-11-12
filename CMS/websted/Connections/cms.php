@@ -7,6 +7,6 @@ $hostname_cms = "localhost";
 $database_cms = "cms";
 $username_cms = "root";
 $password_cms = "";
-$cms = new mysqli($hostname_cms, $database_cms, $username_cms, $password_cms) or (mysqli_connect_error()); 
+$cms = new mysqli($hostname_cms, $username_cms, $password_cms,$database_cms) or (mysqli_connect_error()); 
 
 ?>
