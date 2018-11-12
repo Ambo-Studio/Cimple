@@ -4,9 +4,12 @@ $colname_rsSideindhold = "1";
 if (isset($_GET['id'])) {
   $colname_rsSideindhold = (get_magic_quotes_gpc()) ? $_GET['id'] : addslashes($_GET['id']);
 }
-mysql_select_db($database_cms, $cms);
+
+# https://stackoverflow.com/questions/39493105/call-to-undefined-function-mysql-query-with-login
+
+mysqli_select_db($cms, $database_cms);
 $query_rsSideindhold = sprintf("SELECT * FROM sideindhold WHERE id = %s ORDER BY id DESC", $colname_rsSideindhold);
-$rsSideindhold = mysql_query($query_rsSideindhold, $cms) or die(mysql_error());
+$rsSideindhold = mysqli_query($cms, $query_rsSideindhold) or die(mysqli_connect_error());
 $row_rsSideindhold = mysql_fetch_assoc($rsSideindhold);
 $totalRows_rsSideindhold = mysql_num_rows($rsSideindhold);
 
@@ -14,11 +17,11 @@ $colname_rsSubmenu = "-1";
 if (isset($_GET['mainid'])) {
   $colname_rsSubmenu = (get_magic_quotes_gpc()) ? $_GET['mainid'] : addslashes($_GET['mainid']);
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_rsSubmenu = sprintf("SELECT * FROM sideindhold WHERE mainid = %s", $colname_rsSubmenu);
-$rsSubmenu = mysql_query($query_rsSubmenu, $cms) or die(mysql_error());
-$row_rsSubmenu = mysql_fetch_assoc($rsSubmenu);
-$totalRows_rsSubmenu = mysql_num_rows($rsSubmenu);
+$rsSubmenu = mysqli_query($query_rsSubmenu, $cms) or die(mysqli_connect_error());
+$row_rsSubmenu = mysqli_fetch_assoc($rsSubmenu);
+$totalRows_rsSubmenu = mysqli_num_rows($rsSubmenu);
 
 
 ?>
@@ -51,7 +54,7 @@ $totalRows_rsSubmenu = mysql_num_rows($rsSubmenu);
         <param name="quality" value="high" />
         <param name="wmode" value="opaque" />
         <param name="swfversion" value="8.0.35.0" />
-        <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+        <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you donâ€™t want users to see the prompt. -->
         <param name="expressinstall" value="Scripts/expressInstall.swf" />
         <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
         <!--[if !IE]>-->
