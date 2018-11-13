@@ -1,9 +1,11 @@
 <?php require_once('../Connections/cms.php'); ?>
 <?php
 //initialize the session
-if (!isset($_SESSION)) {
-  session_start();
-}
+session_start();
+    include('login.php'); // Includes Login Script
+    if(isset($_SESSION['login_user'])){
+        header("location: profile.php");
+    }
 
 // ** Logout the current user. **
 $logoutAction = $_SERVER['PHP_SELF']."?doLogout=true";
@@ -28,9 +30,11 @@ if ((isset($_GET['doLogout'])) &&($_GET['doLogout']=="true")){
 }
 ?>
 <?php
-if (!isset($_SESSION)) {
-  session_start();
-}
+    session_start();
+    if(isset($_SESSION['MM_Username']))
+    {
+        header('Location: index.php');
+    }
 $MM_authorizedUsers = "";
 $MM_donotCheckaccess = "true";
 
@@ -68,40 +72,40 @@ if (!((isset($_SESSION['MM_Username'])) && (isAuthorized("",$MM_authorizedUsers,
   if (isset($QUERY_STRING) && strlen($QUERY_STRING) > 0) 
   $MM_referrer .= "?" . $QUERY_STRING;
   $MM_restrictGoTo = $MM_restrictGoTo. $MM_qsChar . "accesscheck=" . urlencode($MM_referrer);
-  header("Location: ". $MM_restrictGoTo); 
+  //header("Location: ". $MM_restrictGoTo);
   exit;
 }
 ?>
 <?php
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($cms ,$database_cms);
 $query_rsSubmenu1 = "SELECT * FROM sideindhold WHERE mainid = 1";
-$rsSubmenu1 = mysql_query($query_rsSubmenu1, $cms) or die(mysql_error());
-$row_rsSubmenu1 = mysql_fetch_assoc($rsSubmenu1);
-$totalRows_rsSubmenu1 = mysql_num_rows($rsSubmenu1);
+$rsSubmenu1 = mysqli_query($query_rsSubmenu1, $cms) or die(mysqli_error());
+$row_rsSubmenu1 = mysqli_fetch_assoc($rsSubmenu1);
+$totalRows_rsSubmenu1 = mysqli_num_rows($rsSubmenu1);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($cms ,$database_cms);
 $query_rsSubmenu2 = "SELECT * FROM sideindhold WHERE mainid = 2";
-$rsSubmenu2 = mysql_query($query_rsSubmenu2, $cms) or die(mysql_error());
-$row_rsSubmenu2 = mysql_fetch_assoc($rsSubmenu2);
-$totalRows_rsSubmenu2 = mysql_num_rows($rsSubmenu2);
+$rsSubmenu2 = mysqli_query($query_rsSubmenu2, $cms) or die(mysqli_error());
+$row_rsSubmenu2 = mysqli_fetch_assoc($rsSubmenu2);
+$totalRows_rsSubmenu2 = mysqli_num_rows($rsSubmenu2);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($cms ,$database_cms);
 $query_rsSubmenu3 = "SELECT * FROM sideindhold WHERE mainid = 3";
-$rsSubmenu3 = mysql_query($query_rsSubmenu3, $cms) or die(mysql_error());
-$row_rsSubmenu3 = mysql_fetch_assoc($rsSubmenu3);
-$totalRows_rsSubmenu3 = mysql_num_rows($rsSubmenu3);
+$rsSubmenu3 = mysqli_query($query_rsSubmenu3, $cms) or die(mysqli_error());
+$row_rsSubmenu3 = mysqli_fetch_assoc($rsSubmenu3);
+$totalRows_rsSubmenu3 = mysqli_num_rows($rsSubmenu3);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_rsSubmenu4 = "SELECT * FROM sideindhold WHERE mainid = 4";
-$rsSubmenu4 = mysql_query($query_rsSubmenu4, $cms) or die(mysql_error());
-$row_rsSubmenu4 = mysql_fetch_assoc($rsSubmenu4);
-$totalRows_rsSubmenu4 = mysql_num_rows($rsSubmenu4);
+$rsSubmenu4 = mysqli_query($query_rsSubmenu4, $cms) or die(mysqli_error());
+$row_rsSubmenu4 = mysqli_fetch_assoc($rsSubmenu4);
+$totalRows_rsSubmenu4 = mysqli_num_rows($rsSubmenu4);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($cms ,$database_cms);
 $query_rsSubmenu5 = "SELECT * FROM sideindhold WHERE mainid = 5";
-$rsSubmenu5 = mysql_query($query_rsSubmenu5, $cms) or die(mysql_error());
-$row_rsSubmenu5 = mysql_fetch_assoc($rsSubmenu5);
-$totalRows_rsSubmenu5 = mysql_num_rows($rsSubmenu5);
+$rsSubmenu5 = mysqli_query($query_rsSubmenu5, $cms) or die(mysql_error());
+$row_rsSubmenu5 = mysqli_fetch_assoc($rsSubmenu5);
+$totalRows_rsSubmenu5 = mysqli_num_rows($rsSubmenu5);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -214,17 +218,17 @@ function MM_openBrWindow(theURL,winName,features) { //v2.0
       <h1>&nbsp;</h1></td>
   </tr>
 </table>
-<div id="footer">Copyright 2002-2012 Gazunga International| Cimple CMS |</div>
+<div id="footer">Copyright 2002-2018 Tacaly.com | Cimple CMS |</div>
 </body>
 </html>
 <?php
-mysql_free_result($rsSubmenu1);
+mysqli_free_result($rsSubmenu1);
 
-mysql_free_result($rsSubmenu2);
+mysqli_free_result($rsSubmenu2);
 
-mysql_free_result($rsSubmenu3);
+mysqli_free_result($rsSubmenu3);
 
-mysql_free_result($rsSubmenu4);
+mysqli_free_result($rsSubmenu4);
 
-mysql_free_result($rsSubmenu5);
+mysqli_free_result($rsSubmenu5);
 ?>
