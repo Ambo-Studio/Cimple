@@ -19,10 +19,10 @@ Requirements
 =
 This CMS system can only be installed on a server with:
 
-*PHP 5.0.1 - Or up -
+*PHP 7.1.0 - Or up -
 https://museum.php.net/php5/
 
-*MYSQL 4.2.0 - Or up -
+*MYSQL 5.0.0 - Or up -
 http://mysql.localhost.net.ar/downloads/mysql/4.1.html
 
 Support & Forum
