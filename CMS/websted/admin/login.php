@@ -12,18 +12,18 @@ if (isset($accesscheck)) {
 if (isset($_POST['brugernavn'])) {
   $loginUsername=$_POST['brugernavn'];
   $password=$_POST['adgangskode'];
-  $kryptpw = sha512($password);
+  $kryptpw = hash('sha256', $_POST['password']);
   $MM_fldUserAuthorization = "";
   $MM_redirectLoginSuccess = "index.php";
   $MM_redirectLoginFailed = "login.php";
   $MM_redirecttoReferrer = false;
-  mysql_select_db($database_cms, $cms);
+  mysqli_select_db($cms, $database_cms);
   
   $LoginRS__query=sprintf("SELECT brugernavn, adgangskode FROM brugere WHERE brugernavn='%s' AND adgangskode='%s'",
     get_magic_quotes_gpc() ? $loginUsername : addslashes($loginUsername), get_magic_quotes_gpc() ? $password : addslashes($password)); 
    
-  $LoginRS = mysql_query($LoginRS__query, $cms) or die(mysql_error());
-  $loginFoundUser = mysql_num_rows($LoginRS);
+  $LoginRS = mysqli_query($cms ,$LoginRS__query) or die(mysqli_error());
+  $loginFoundUser = mysqli_num_rows($LoginRS);
   if ($loginFoundUser) {
      $loginStrGroup = "";
     
@@ -77,7 +77,7 @@ if (isset($_POST['brugernavn'])) {
         </tr>
         <tr bgcolor="#FFFFFF">
           <td>&nbsp;</td>
-          <td><input type="submit" name="Submit" value="Log på"></td>
+          <td><input type="submit" name="Submit" value="Log pÃ‚"></td>
         </tr>
       </table></td>
     </tr>
