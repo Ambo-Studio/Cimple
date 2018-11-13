@@ -4,41 +4,37 @@ $colname_rsSideindhold = "1";
 if (isset($_GET['id'])) {
   $colname_rsSideindhold = (get_magic_quotes_gpc()) ? $_GET['id'] : addslashes($_GET['id']);
 }
-
-# https://stackoverflow.com/questions/39493105/call-to-undefined-function-mysql-query-with-login
-
 mysqli_select_db($cms, $database_cms);
 $query_rsSideindhold = sprintf("SELECT * FROM sideindhold WHERE id = %s ORDER BY id DESC", $colname_rsSideindhold);
 $rsSideindhold = mysqli_query($cms, $query_rsSideindhold) or die(mysqli_connect_error());
-$row_rsSideindhold = mysql_fetch_assoc($rsSideindhold);
-$totalRows_rsSideindhold = mysql_num_rows($rsSideindhold);
+$row_rsSideindhold = mysqli_fetch_assoc($rsSideindhold);
+$totalRows_rsSideindhold = mysqli_num_rows($rsSideindhold);
 
 $colname_rsSubmenu = "-1";
 if (isset($_GET['mainid'])) {
   $colname_rsSubmenu = (get_magic_quotes_gpc()) ? $_GET['mainid'] : addslashes($_GET['mainid']);
 }
-mysqli_select_db($database_cms, $cms);
+mysqli_select_db($cms ,$database_cms);
 $query_rsSubmenu = sprintf("SELECT * FROM sideindhold WHERE mainid = %s", $colname_rsSubmenu);
-$rsSubmenu = mysqli_query($query_rsSubmenu, $cms) or die(mysqli_connect_error());
+$rsSubmenu = mysqli_query($cms ,$query_rsSubmenu) or die(mysqli_connect_error());
 $row_rsSubmenu = mysqli_fetch_assoc($rsSubmenu);
 $totalRows_rsSubmenu = mysqli_num_rows($rsSubmenu);
-
-
 ?>
+
 <!-- Dette er HTML start -->
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 
 <!-- Dette er Head -->
-<head>
+<head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <!-- Dette er Metatag -->
 <meta http-equiv="refresh" content="3000" />
-<meta name="description" content="Gazunga CMS CIMPLE"></meta> 
+<meta name="description" content="Cimple"></meta>
 <meta name="keywords" content="CMS,CIMPLE,Keyword,website,Gazunga"></meta> 
 <meta name="author" content="Frederick Eggertsen" />
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+
 <!-- Dette er Metatag -->
-<title>Cimple CMS</title>
+<title>Cimple,Title in index.php</title>
 <link href="css/styles.css" rel="stylesheet" type="text/css" />
 <script src="Scripts/swfobject_modified.js" type="text/javascript"></script>
 </head>
@@ -54,7 +50,7 @@ $totalRows_rsSubmenu = mysqli_num_rows($rsSubmenu);
         <param name="quality" value="high" />
         <param name="wmode" value="opaque" />
         <param name="swfversion" value="8.0.35.0" />
-        <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you don’t want users to see the prompt. -->
+        <!-- This param tag prompts users with Flash Player 6.0 r65 and higher to download the latest version of Flash Player. Delete it if you donít want users to see the prompt. -->
         <param name="expressinstall" value="Scripts/expressInstall.swf" />
         <!-- Next object tag is for non-IE browsers. So hide it from IE using IECC. -->
         <!--[if !IE]>-->
@@ -90,7 +86,7 @@ $totalRows_rsSubmenu = mysqli_num_rows($rsSubmenu);
             <td><a href="index.php?id=<?php echo $row_rsSubmenu['id']; ?>&amp;mainid=<?php echo $row_rsSubmenu['mainid']; ?>"><?php echo $row_rsSubmenu['navn']; ?></a></td>
           </tr>
                 </table>
-        <?php } while ($row_rsSubmenu = mysql_fetch_assoc($rsSubmenu)); ?></td>
+        <?php } while ($row_rsSubmenu = mysqli_fetch_assoc($rsSubmenu)); ?></td>
     <td class="middle"><form id="form1" name="form1" method="get" action="resultat.php">
       <table width="200" border="0" align="right" cellpadding="2" cellspacing="0">
         <tr>
@@ -125,7 +121,7 @@ $totalRows_rsSubmenu = mysqli_num_rows($rsSubmenu);
   </table> </td>
   </tr>
 </table>
-<div id="footer">Copyright 2002-2012 Gazunga International| Cimple CMS |</div>
+<div id="footer">Copyright 2002-2018 Tacaly | Cimple CMS |</div>
 <script type="text/javascript">
 <!--
 swfobject.registerObject("FlashID");
@@ -139,7 +135,7 @@ swfobject.registerObject("FlashID");
 
 <!-- Dette er hjemmesidens inholds forbinelse med cms.php -->
 <?php
-mysql_free_result($rsSideindhold);
+mysqli_free_result($rsSideindhold);
 
-mysql_free_result($rsSubmenu);
+mysqli_free_result($rsSubmenu);
 ?>
