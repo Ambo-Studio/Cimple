@@ -9,6 +9,7 @@ Installation & Login
 Please go to the wiki for the setup guide -
 https://github.com/tacaly/Cimple/wiki
 
+Demo page: http://dev.tacaly.com/Cimple/
 -----------
 Login: admin 
 
