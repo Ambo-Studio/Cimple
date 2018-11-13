@@ -4,11 +4,11 @@ $colname_rsResultat = "-1";
 if (isset($_GET['search'])) {
   $colname_rsResultat = (get_magic_quotes_gpc()) ? $_GET['search'] : addslashes($_GET['search']);
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($cms ,$database_cms);
 $query_rsResultat = sprintf("SELECT id, mainid, overskrift FROM sideindhold WHERE tekst1 LIKE '%%%s%%' OR tekst2 LIKE '%%%s%%'    OR overskrift LIKE '%%%s%%'", $colname_rsResultat,$colname_rsResultat,$colname_rsResultat);
-$rsResultat = mysql_query($query_rsResultat, $cms) or die(mysql_error());
-$row_rsResultat = mysql_fetch_assoc($rsResultat);
-$totalRows_rsResultat = mysql_num_rows($rsResultat);
+$rsResultat = mysqli_query($cms ,$query_rsResultat) or die(mysqli_error());
+$row_rsResultat = mysqli_fetch_assoc($rsResultat);
+$totalRows_rsResultat = mysqli_num_rows($rsResultat);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -20,7 +20,7 @@ $totalRows_rsResultat = mysql_num_rows($rsResultat);
 <body>
 <table width="100%" border="0" cellpadding="0" cellspacing="0" class="layout">
   <tr>
-    <td colspan="2" class="top"><img src="images/logo.jpg" width="640" height="200" alt="toplogo" /></td>
+    <td colspan="2" class="top"><img src="images/logo.jpg" width="376" height="91" alt="toplogo" /></td>
   </tr>
   <tr>
     <td class="top1">&nbsp;</td>
@@ -51,7 +51,7 @@ $totalRows_rsResultat = mysql_num_rows($rsResultat);
           <tr>
             <td><a href="index.php?id=<?php echo $row_rsResultat['id']; ?><?php if ($row_rsResultat['mainid'] <> null) echo "&mainid="+$row_rsResultat['mainid']; ?>"><?php echo $row_rsResultat['overskrift']; ?></a></td>
           </tr>
-          <?php } while ($row_rsResultat = mysql_fetch_assoc($rsResultat)); ?>
+          <?php } while ($row_rsResultat = mysqli_fetch_assoc($rsResultat)); ?>
       </table>      
       <?php if ($totalRows_rsResultat == 0) { // Show if recordset empty ?>
         <table width="600" border="0" cellspacing="0" cellpadding="2">
@@ -70,5 +70,5 @@ $totalRows_rsResultat = mysql_num_rows($rsResultat);
 </body>
 </html>
 <?php
-mysql_free_result($rsResultat);
+mysqli_free_result($rsResultat);
 ?>
