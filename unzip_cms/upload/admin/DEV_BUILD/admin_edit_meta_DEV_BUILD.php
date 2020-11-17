@@ -1,4 +1,4 @@
-<?php require_once('../Connections/cms.php'); ?>
+<?php require_once('Connections/cms.php'); ?>
 <?php
 // Made by Frederick Eggertsen
 ?>
@@ -65,5 +65,5 @@
 </body>
 </html>
 <?php
-mysqli_freeresult($rsEdit);
+mysqli_free_result($rsEdit);
 ?>

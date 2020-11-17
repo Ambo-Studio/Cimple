@@ -67,7 +67,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1605570203529</updated>
-      <workItem from="1605570205027" duration="2445000" />
+      <workItem from="1605570205027" duration="3087000" />
     </task>
     <servers />
   </component>
@@ -102,10 +102,14 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="540" y="174" key="#PHP_CS_Fixer/0.0.1920.1040@0.0.1920.1040" timestamp="1605571999592" />
-    <state x="414" y="174" width="1092" height="753" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605570429641">
+    <state x="336" y="361" key="#SQL_Dialects" timestamp="1605572757310">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="414" y="174" width="1092" height="753" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605570429641" />
+    <state x="336" y="361" key="#SQL_Dialects/0.0.1920.1040@0.0.1920.1040" timestamp="1605572757310" />
+    <state x="414" y="174" width="1092" height="753" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1605572974500">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="414" y="174" width="1092" height="753" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1605572974500" />
     <state x="718" y="389" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1605572606609">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

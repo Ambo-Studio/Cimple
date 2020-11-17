@@ -1,4 +1,4 @@
-<?php require_once('../Connections/cms.php');
+<?php require_once('Connections/cms.php');
 mysqli_select_db($database_cms, $cms);
 ?>
 

@@ -1,4 +1,4 @@
-<?php require_once('../Connections/cms.php'); ?>
+<?php require_once('Connections/cms.php'); ?>
 <?php
 function GetSQLValueString($theValue, $theType, $theDefinedValue = "", $theNotDefinedValue = "") 
 {
