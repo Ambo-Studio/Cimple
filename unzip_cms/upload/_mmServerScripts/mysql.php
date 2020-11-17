@@ -4,12 +4,12 @@ if (!function_exists('create_error')){
 	die();
 }
 
-define('MYSQL_NOT_EXISTS', create_error("Your PHP server doesn't have the MySQL module loaded or you can't use the mysql_(p)connect functions."));
+define('MYSQLI_NOT_EXISTS', create_error("Your PHP server doesn't have the MySQL module loaded or you can't use the mysql_(p)connect functions."));
 define('CONN_NOT_OPEN_GET_TABLES', create_error('The Connection could not be opened when trying to retrieve the tables.'));
 define('CONN_NOT_OPEN_GET_DB_LIST', create_error('The Connection could not be opened when trying to retrieve the database list.'));
 			 
-if (!function_exists('mysql_connect') || !function_exists('mysql_pconnect') || !extension_loaded('mysql')){
-	echo MYSQL_NOT_EXISTS;
+if (!function_exists('mysqli_connect') || !function_exists('mysqli_pconnect') || !extension_loaded('mysql')){
+	echo MYSQLI_NOT_EXISTS;
 	die();
 }
 
@@ -44,6 +44,8 @@ function KT_ErrorHandler($errno, $errstr, $errfile, $errline) {
 			}
 	}
 }
+
+$debug_to_file =file("debug.log");
 if ($debug_to_file){
 		$old_error_handler = set_error_handler("KT_ErrorHandler");
 }
@@ -98,10 +100,10 @@ class MySqlConnection
 
 	function Open()
 	{
-	  $this->connectionId = mysql_connect($this->hostname, $this->username, $this->password);
+	  $this->connectionId = mysqli_connect($this->hostname, $this->username, $this->password);
 		if (isset($this->connectionId) && $this->connectionId && is_resource($this->connectionId))
 		{
-			$this->isOpen = ($this->database == "") ? true : mysql_select_db($this->database, $this->connectionId);
+			$this->isOpen = ($this->database == "") ? true : mysqli_select_db($this->database, $this->connectionId);
 		}
 		else
 		{
@@ -118,7 +120,7 @@ class MySqlConnection
 	{
 		if (is_resource($this->connectionId) && $this->isOpen)
 		{
-			if (mysql_close($this->connectionId))
+			if (mysqli_close($this->connectionId))
 			{
 				$this->isOpen = false;
 				unset($this->connectionId);
@@ -138,7 +140,7 @@ class MySqlConnection
 			//added backtick for handling reserved words and special characters
 			//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
 			$sql = ' SHOW TABLES FROM ' . $this->ensureTicks($table_name) ;
-			$results = mysql_query($sql, $this->connectionId) or $this->HandleException();
+			$results = mysqli_query($sql, $this->connectionId) or $this->HandleException();
 
 			$xmlOutput = "<RESULTSET><FIELDS>";
 
@@ -151,8 +153,8 @@ class MySqlConnection
 
 			$xmlOutput .= "</FIELDS><ROWS>";
 
-			if (is_resource($results) && mysql_num_rows($results) > 0){
-					while ($row = mysql_fetch_array($results)){
+			if (is_resource($results) && mysqli_num_rows($results) > 0){
+					while ($row = mysqli_fetch_array($results)){
 							$xmlOutput .= '<ROW><VALUE/><VALUE/><VALUE>' . $row[0]. '</VALUE></ROW>';	
 					}
 			}
@@ -180,7 +182,7 @@ class MySqlConnection
 		//added backtick for handling reserved words and special characters
 		//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
 		$query  = "DESCRIBE ".$this->ensureTicks($TableName);
-		$result = mysql_query($query) or $this->HandleException();
+		$result = mysqli_query($query) or $this->HandleException();
 
 		if ($result)
 		{
@@ -199,7 +201,7 @@ class MySqlConnection
 			$xmlOutput .= "</FIELDS><ROWS>";
 
 			// The fields returned from DESCRIBE are: Field, Type, Null, Key, Default, Extra
-			while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
+			while ($row = mysqli_fetch_array($result, mysqli_ASSOC))
 			{
 				$xmlOutput .= "<ROW><VALUE/><VALUE/><VALUE/>";
 
@@ -225,7 +227,7 @@ class MySqlConnection
 				$xmlOutput .= "<VALUE>" . $null         . "</VALUE>";
 				$xmlOutput .= "<VALUE>" . $size         . "</VALUE></ROW>";
 			}
-			mysql_free_result($result);
+			mysqli_freeresult($result);
 
 			$xmlOutput .= "</ROWS></RESULTSET>";
 		}
@@ -248,16 +250,16 @@ class MySqlConnection
 				
 		$xmlOutput = "";
 
-		$result = mysql_query($aStatement) or $this->HandleException();
+		$result = mysqli_query($aStatement) or $this->HandleException();
 		
 		if (isset($result) && is_resource($result))
 		{
 			$xmlOutput = "<RESULTSET><FIELDS>";
 
-			$fieldCount = mysql_num_fields($result);
+			$fieldCount = mysqli_num_fields($result);
 			for ($i=0; $i < $fieldCount; $i++)
 			{
-				$meta = mysql_fetch_field($result);
+				$meta = mysqli_fetch_field($result);
 				if ($meta)
 				{
 					$xmlOutput .= '<FIELD';
@@ -277,7 +279,7 @@ class MySqlConnection
 			}
 
 			$xmlOutput .= "</FIELDS><ROWS>";
-			$row = mysql_fetch_assoc($result);
+			$row = mysqli_fetch_assoc($result);
 
 			for ($i=0; $row && ($i < $MaxRows); $i++)
 			{
@@ -291,10 +293,10 @@ class MySqlConnection
 				}
 
  				$xmlOutput .= "</ROW>";
-				$row = mysql_fetch_assoc($result);
+				$row = mysqli_fetch_assoc($result);
 			}
 
-			mysql_free_result($result);
+			mysqli_freeresult($result);
 
 			$xmlOutput .= "</ROWS></RESULTSET>";
 		}
@@ -328,7 +330,7 @@ class MySqlConnection
 	function HandleException()
 	{
 		global $debug_to_file, $f;
-		$this->error = create_error(' MySQL Error#: '. ((int)mysql_errno()) . "\n\n".mysql_error());
+		$this->error = create_error(' MySQL Error#: '. ((int)mysqli_errno()) . "\n\n".mysqli_error());
 		log_messages($this->error);
 		die($this->error.'</HTML>');
 	}
@@ -358,9 +360,9 @@ class MySqlConnection
 		$xmlOutput = '<RESULTSET><FIELDS><FIELD><NAME>NAME</NAME></FIELD></FIELDS><ROWS>';
 
 		if (isset($this->connectionId) && is_resource($this->connectionId)){
-				$dbList = mysql_list_dbs($this->connectionId);
+				$dbList = mysqli_list_dbs($this->connectionId);
 				
-				while ($row = mysql_fetch_object($dbList))
+				while ($row = mysqli_fetch_object($dbList))
 				{
 					$xmlOutput .= '<ROW><VALUE>' . $row->Database . '</VALUE></ROW>';
 				}
@@ -379,7 +381,7 @@ class MySqlConnection
 		//added backtick for handling reserved words and special characters
 		//http://dev.mysql.com/doc/refman/5.0/en/legal-names.html
 		$query  = "DESCRIBE ".$this->ensureTicks($TableName);
-		$result = mysql_query($query) or $this->HandleException();
+		$result = mysqli_query($query) or $this->HandleException();
 		
 		
 		if ($result)
@@ -399,7 +401,7 @@ class MySqlConnection
 			$xmlOutput .= '</FIELDS><ROWS>';
 
 			// The fields returned from DESCRIBE are: Field, Type, Null, Key, Default, Extra
-			while ($row = mysql_fetch_array($result, MYSQL_ASSOC))
+			while ($row = mysqli_fetch_array($result, mysqli_ASSOC))
 			{
 			  if (strtoupper($row['Key']) == 'PRI'){
   				$xmlOutput .= '<ROW><VALUE/><VALUE/><VALUE/>';
@@ -427,7 +429,7 @@ class MySqlConnection
   				$xmlOutput .= '<VALUE>' . $size         . '</VALUE></ROW>';
   			}
 			}
-			mysql_free_result($result);
+			mysqli_free_result($result);
 
 			$xmlOutput .= '</ROWS></RESULTSET>';
 		}

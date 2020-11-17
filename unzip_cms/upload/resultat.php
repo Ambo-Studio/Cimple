@@ -1,15 +1,17 @@
 <?php require_once('Connections/cms.php'); ?>
 <?php
 $colname_rsResultat = "-1";
-if (isset($_GET['search'])) {
-  $colname_rsResultat = (get_magic_quotes_gpc()) ? $_GET['search'] : addslashes($_GET['search']);
-}
+    if (isset($_GET['search'])) {
+         $colname_rsResultat = (get_magic_quotes_gpc()) ? $_GET['search'] : addslashes($_GET['search']);
+    }
 mysqli_select_db($cms ,$database_cms);
 $query_rsResultat = sprintf("SELECT id, mainid, overskrift FROM sideindhold WHERE tekst1 LIKE '%%%s%%' OR tekst2 LIKE '%%%s%%'    OR overskrift LIKE '%%%s%%'", $colname_rsResultat,$colname_rsResultat,$colname_rsResultat);
 $rsResultat = mysqli_query($cms ,$query_rsResultat) or die(mysqli_error());
 $row_rsResultat = mysqli_fetch_assoc($rsResultat);
 $totalRows_rsResultat = mysqli_num_rows($rsResultat);
-?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+?>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />

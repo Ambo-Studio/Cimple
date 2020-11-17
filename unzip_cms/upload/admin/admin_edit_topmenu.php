@@ -38,8 +38,8 @@ if ((isset($_POST["MM_update"])) && ($_POST["MM_update"] == "edit")) {
                        GetSQLValueString($_POST['tekst2'], "text"),
                        GetSQLValueString($_POST['id'], "int"));
 
-  mysql_select_db($database_cms, $cms);
-  $Result1 = mysql_query($updateSQL, $cms) or die(mysql_error());
+  mysqli_select_db($database_cms, $cms);
+  $Result1 = mysqli_query($updateSQL, $cms) or die(mysqli_error());
 
   $updateGoTo = "index.php";
   if (isset($_SERVER['QUERY_STRING'])) {
@@ -53,17 +53,17 @@ $colname_rsEdit = "-1";
 if (isset($_GET['id'])) {
   $colname_rsEdit = (get_magic_quotes_gpc()) ? $_GET['id'] : addslashes($_GET['id']);
 }
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_rsEdit = sprintf("SELECT * FROM sideindhold WHERE id = %s", $colname_rsEdit);
-$rsEdit = mysql_query($query_rsEdit, $cms) or die(mysql_error());
-$row_rsEdit = mysql_fetch_assoc($rsEdit);
-$totalRows_rsEdit = mysql_num_rows($rsEdit);
+$rsEdit = mysqli_query($query_rsEdit, $cms) or die(mysql_error());
+$row_rsEdit = mysqli_fetch_assoc($rsEdit);
+$totalRows_rsEdit = mysqli_num_rows($rsEdit);
 
-mysql_select_db($database_cms, $cms);
+mysqli_select_db($database_cms, $cms);
 $query_rsBilledmenu = "SELECT * FROM billeder";
-$rsBilledmenu = mysql_query($query_rsBilledmenu, $cms) or die(mysql_error());
-$row_rsBilledmenu = mysql_fetch_assoc($rsBilledmenu);
-$totalRows_rsBilledmenu = mysql_num_rows($rsBilledmenu);
+$rsBilledmenu = mysqli_query($query_rsBilledmenu, $cms) or die(mysql_error());
+$row_rsBilledmenu = mysqli_fetch_assoc($rsBilledmenu);
+$totalRows_rsBilledmenu = mysqli_num_rows($rsBilledmenu);
 ?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -113,11 +113,11 @@ do {
 ?>
               <option value="<?php echo $row_rsBilledmenu['billednavn']?>"<?php if (!(strcmp($row_rsBilledmenu['billednavn'], $row_rsEdit['billede']))) {echo "selected=\"selected\"";} ?>><?php echo $row_rsBilledmenu['billednavn']?></option>
               <?php
-} while ($row_rsBilledmenu = mysql_fetch_assoc($rsBilledmenu));
-  $rows = mysql_num_rows($rsBilledmenu);
+} while ($row_rsBilledmenu = mysqli_fetch_assoc($rsBilledmenu));
+  $rows = mysqli_num_rows($rsBilledmenu);
   if($rows > 0) {
-      mysql_data_seek($rsBilledmenu, 0);
-	  $row_rsBilledmenu = mysql_fetch_assoc($rsBilledmenu);
+      mysqli_data_seek($rsBilledmenu, 0);
+	  $row_rsBilledmenu = mysqli_fetch_assoc($rsBilledmenu);
   }
 ?>
             </select>
@@ -145,7 +145,7 @@ do {
 </body>
 </html>
 <?php
-mysql_free_result($rsEdit);
+mysqli_freeresult($rsEdit);
 
-mysql_free_result($rsBilledmenu);
+mysqli_freeresult($rsBilledmenu);
 ?>

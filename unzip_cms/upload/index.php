@@ -29,8 +29,8 @@ $totalRows_rsSubmenu = mysqli_num_rows($rsSubmenu);
 <head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <!-- Dette er Metatag -->
 <meta http-equiv="refresh" content="3000" />
-<meta name="description" content="Cimple"></meta>
-<meta name="keywords" content="CMS,CIMPLE,Keyword,website,Gazunga"></meta> 
+    <meta name="description" content="Cimple"/>
+    <meta name="keywords" content="CMS,CIMPLE,Keyword,website"/>
 <meta name="author" content="Frederick Eggertsen" />
 
 <!-- Dette er Metatag -->

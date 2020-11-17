@@ -6,6 +6,10 @@
 <title>Untitled Document</title>
 <!-- TemplateEndEditable -->
 <link href="../css/styles.css" rel="stylesheet" type="text/css" />
+
+    <!-- link til adminskabelon css fil -->
+    <llink href="../css/template/adminskabelon.css" rel="alternate" type="text/css" />
+
 <!-- TemplateBeginEditable name="head" -->
 <!-- TemplateEndEditable -->
 </head>

@@ -65,5 +65,5 @@
 </body>
 </html>
 <?php
-mysql_free_result($rsEdit);
+mysqli_freeresult($rsEdit);
 ?>

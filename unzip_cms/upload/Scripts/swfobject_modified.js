@@ -177,7 +177,7 @@ var swfobject = function() {
 		else if (typeof win.onload == "function") {
 			var fnOld = win.onload;
 			win.onload = function() {
-				fnOld();
+				fnOld(undefined);
 				fn();
 			};
 		}

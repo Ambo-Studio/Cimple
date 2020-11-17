@@ -4,10 +4,10 @@
 session_start();
 
 $loginFormAction = $_SERVER['PHP_SELF'];
-if (isset($accesscheck)) {
-  $_SESSION['PrevUrl'] = $accesscheck;
-  session_register('PrevUrl');
-}
+    if (isset($accesscheck)) {
+        $_SESSION['PrevUrl'] = $accesscheck;
+      // session_register('PrevUrl');
+    }
 
 if (isset($_POST['brugernavn'])) {
   $loginUsername=$_POST['brugernavn'];
@@ -41,6 +41,7 @@ if (isset($_POST['brugernavn'])) {
   }
 }
 ?>
+
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -49,10 +50,10 @@ if (isset($_POST['brugernavn'])) {
 <link href="../css/styles.css" rel="stylesheet" type="text/css">
 <style type="text/css">
 <!--
-.style1 {
-	color: #FFFFFF;
-	font-weight: bold;
-}
+    .style1 {
+	    color: #FFFFFF;
+	    font-weight: bold;
+    }
 -->
 </style>
 </head>
