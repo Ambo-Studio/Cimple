@@ -34,4 +34,4 @@ COPYRIGHT AND LICENSE
 =
 Copyright Frederick Ambo 2002-2020.
 
-All rights reserved
+Some rights reserved
