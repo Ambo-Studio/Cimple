@@ -136,28 +136,16 @@ class ciInstaller{
     }
     static public function getPackageInfo() {
         return array(
-            '3.1.2' => array(
+            '1.2.0' => array(
                 'tree' => 'Cimple',
-                'name' => 'Cimple CMS 3.1.3',
-                'link' => 'https://github.com/Cimple-cms/Cimple/archive/3.1.3.zip',
-                'location' => 'install/index.php'
-            ),
-            '3.x' => array(
-                'tree' => 'Cimple',
-                'name' => 'Cimple CMS 3(3.x develop version)',
-                'link' => 'https://github.com/Cimple-cms/Cimple/archive/3.x.zip',
-                'location' => 'install/index.php'
-            ),     
-            '1.4.12' => array(
-                'tree' => 'Cimple',
-                'name' => 'Cimple CMS 1.4.14',
-                'link' => 'https://github.com/Cimple-cms/Cimple/archive/1.4.14.zip',
+                'name' => 'Cimple CMS 1.2.0',
+                'link' => 'https://github.com/ylacat/Cimple/archive/1.2.0.zip',
                 'location' =>'install/index.php'
             ),
-            '1.4.x' => array(
+            '1.1.x' => array(
                 'tree' => 'Cimple',
                 'name' => 'Cimple CMS (1.4.x develop version)',
-                'link' => 'https://github.com/Cimple-cms/Cimple/archive/1.4.x.zip',
+                'link' => 'https://github.com/ylacat/Cimple/archive/1.4.x.zip',
                 'location' => 'install/index.php'
             ),
         );
