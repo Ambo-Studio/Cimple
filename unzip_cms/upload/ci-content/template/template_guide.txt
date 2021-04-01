@@ -1,7 +1,7 @@
 ****************************************************************************************
 cIMPLE CMS
 
-Copyright 2002-2012 Gazunga International
+Copyright 2002-2021 Tacal
 
 Dette er koder tilo hjemmesiden som man kan
 bruge til at lave sin egem template/thema.
