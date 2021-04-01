@@ -1,5 +1,4 @@
-<img src="http://dev.tacaly.com/Cimple/billeder/Cimplelogo.jpg" border="0">
-<a href="https://codeclimate.com/github/Gazunga/Cimple"><img src="https://codeclimate.com/github/Gazunga/Cimple.png" /></a>
+[![Maintainability](https://api.codeclimate.com/v1/badges/556cb54091af93a71d38/maintainability)](https://codeclimate.com/github/Ylacat/Cimple/maintainability)
 
 Cimple is a Content Management System, designed to power only a single small company
 
