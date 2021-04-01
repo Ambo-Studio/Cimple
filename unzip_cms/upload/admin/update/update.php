@@ -2,7 +2,7 @@
 <?php
                 // define some variables
         $folder_path = "../";
-        $local_file = "ci-updatelocal.zip";
+        $local_file = "./temp/ci-updatelocal.zip";
         $server_file = "ci-update.zip";
        
         //-- Connection Settings
