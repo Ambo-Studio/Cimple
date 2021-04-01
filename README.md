@@ -7,9 +7,9 @@ Cimple is a Content Management System, designed to power only a single small com
 Installation & Login
 =
 Please go to the wiki for the setup guide -
-https://github.com/tacaly/Cimple/wiki
+https://github.com/ylacat/Cimple/wiki
 
-Demo page: http://dev.tacaly.com/Cimple/
+Demo page: http://tacaly.de/dev/cimple
 
 Login: admin 
 
@@ -25,13 +25,4 @@ https://museum.php.net/php5/
 *MYSQL 5.0.0 - Or up -
 http://mysql.localhost.net.ar/downloads/mysql/4.1.html
 
-Support & Forum
-=
 
-You can get support at Tacaly.com
-
-COPYRIGHT AND LICENSE
-=
-Copyright Frederick Ambo 2002-2020.
-
-Some rights reserved
