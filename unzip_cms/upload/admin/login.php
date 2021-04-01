@@ -65,20 +65,20 @@ if (isset($_POST['brugernavn'])) {
     <tr>
       <td><table width="100%"  border="0" cellspacing="0" cellpadding="2">
         <tr>
-          <td width="28%"><span class="style1">Log p&aring; </span></td>
+          <td width="28%"><span class="style1">Login</span></td>
           <td width="72%">&nbsp;</td>
         </tr>
         <tr bgcolor="#FFFFFF">
           <td>Brugernavn:</td>
-          <td><input name="brugernavn" type="text" id="brugernavn" size="40"></td>
+          <td><input name="brugernavn" type="text" id="Username" size="40"></td>
         </tr>
         <tr bgcolor="#FFFFFF">
           <td>Adgangskode:</td>
-          <td><input name="adgangskode" type="password" id="adgangskode" size="40"></td>
+          <td><input name="adgangskode" type="password" id="Password" size="40"></td>
         </tr>
         <tr bgcolor="#FFFFFF">
           <td>&nbsp;</td>
-          <td><input type="submit" name="Submit" value="Log pÂ"></td>
+          <td><input type="submit" name="Submit" value="Login"></td>
         </tr>
       </table></td>
     </tr>
